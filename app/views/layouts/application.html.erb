@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div class="header-logo">
+      <%=link_to("Twitter","/")%>
+    </div>
+    <div class="header-menus">
+      <%=link_to("Twitterとは","/about")%>
+      <%=link_to("投稿一覧","/posts/index")%>
+    </div>
     <%= yield %>
   </body>
 </html>

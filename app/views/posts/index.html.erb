@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>投稿一覧</title>
+        <link rel="stylesheet" href="post.scss">
+    </head>
+    <body>
+        <% @posts.each do |post| %>
+            <div class="contents">
+                <div class=index>
+                    <%= post.content %>
+                </div>
+            </div>
+        <% end %>
+    </body>
+</html>
