@@ -13,13 +13,20 @@
   </head>
 
   <body>
-    <div class="header-logo">
+    <div class="header">
+      <div class="header-logo">
       <%=link_to("Twitter","/")%>
+      </div>
+      <div class="header-menus">
+        <%=link_to("Twitterとは","/about")%>
+        <%=link_to("投稿一覧","/posts/index")%>
+        <%=link_to("新規投稿","/posts/new")%>
+      </div>
     </div>
-    <div class="header-menus">
-      <%=link_to("Twitterとは","/about")%>
-      <%=link_to("投稿一覧","/posts/index")%>
+    <div class="main">
+      <%= yield %>
     </div>
-    <%= yield %>
+    <div class="footer">
+    </div>
   </body>
 </html>
