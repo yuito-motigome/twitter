@@ -10,8 +10,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="home.scss">
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="javascripts/bootstrap.min.js"></script>    
   </head>
-
+  
   <body>
     <div class="header">
       <div class="header-logo">
@@ -19,8 +25,15 @@
       </div>
       <div class="header-menus">
         <%=link_to("Twitterとは","/about")%>
-        <%=link_to("投稿一覧","/posts/index")%>
-        <%=link_to("新規投稿","/posts/new")%>
+          <%if session[:user_name]%>
+            <%=link_to("投稿一覧","/posts/index")%>
+            <%=link_to("新規投稿","/posts/new")%>
+            <%=link_to("ログアウト","/users/sign_out")%>
+            <%=link_to(@now_user.user_name,"/users/#{@now_user.id}/show")%>             
+          <%else%>  
+            <%=link_to("新規登録","/users/create") %> 
+            <%=link_to("ログイン","/users/log_in") %>       
+          <%end%>
       </div>
     </div>
     <div class="main">

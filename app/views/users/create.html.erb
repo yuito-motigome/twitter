@@ -1,0 +1,21 @@
+<% provide(:title, '新規登録') %>
+<%= form_tag("/users/sign_up") do %>
+  <div class="title">
+    新規登録<br>
+  </div>
+　<form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">ユーザーネーム</label>
+      <input type="text" class="form-control"  placeholder="ユーザーネームを入力" name="user_name">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">メールアドレス</label>
+      <input type="text" class="form-control"  placeholder="メールアドレスを入力" name="mail">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">パスワード</label>
+      <input type="password" class="form-control"  placeholder="パスワードを入力" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">送信する</button>
+  </form>
+<% end %>

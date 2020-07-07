@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+    before_action :now_user    
+    
     def index
         @posts = Post.all
     end    
@@ -7,15 +9,43 @@ class PostsController < ApplicationController
     end    
     
     def create
-        post = Post.new(content: params[:content])
-        if post != nil    
-            if post.save
-                redirect_to("/posts/index")
-            end    
-        end
+        if session[:user_id]
+            post = Post.new(content: params[:content],user_id: session[:user_id])
+            if post == nil    
+            else    
+                if post.save
+                    redirect_to("/posts/index")
+                end    
+            end
+        else
+            redirect_to("/users/log_in")    
+        end    
     end
     
     def show
         @post = Post.find_by(id: params[:id])
+    end    
+
+    def editer
+        @post = Post.find_by(id: params[:id])
+    end    
+
+    def edit
+        @post = Post.find_by(id: params[:id])
+        @post.content = params[:edit]
+        if @now_user.id == @post.user_id
+            @post.save
+            redirect_to("/posts/index")
+        else
+            redirect_to("/posts/index")    
+        end    
+    end    
+    
+    def erase
+        @post = Post.find_by(id: params[:id])
+        if @now_user.id == @post.user_id
+            @post.destroy
+        end
+        redirect_to("/posts/index")           
     end    
 end

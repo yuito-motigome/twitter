@@ -1,2 +1,8 @@
 <% provide(:title, '投稿') %>
-<%= @post.content %>
+<div class="index">    
+    <%= @post.content %><br>
+    <% if  @now_user.id == @post.user_id %>
+        <%= link_to("編集","/posts/#{@post.id}/editer") %>　　<%= link_to("削除","/posts/#{@post.id}/erase") %>
+    <% end %>
+</div>
+   

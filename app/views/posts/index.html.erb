@@ -2,7 +2,16 @@
 <% @posts.each do |post| %>
     <div class="contents">
         <div class="index">
-            <%= post.content %>
+            <%= link_to(post.content,"/posts/#{post.id}") %><br>
+            <div class="index-at">
+                <div class="right">
+                    <%= post.updated_at %>
+                </div>
+                <div class="left">
+                    <% user =post.user%>
+                    <%= link_to(user.user_name,"/users/#{user.id}/show")%>
+                </div>        
+            </div>
         </div>
     </div>
 <% end %>

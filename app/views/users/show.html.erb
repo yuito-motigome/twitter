@@ -1,0 +1,11 @@
+<% provide(:title, 'ユーザー') %>
+<div class="title">
+    <%= @user.user_name %>
+</div>
+<img src="/user_images/default_user.jpg"> 
+<%= image_tag '/user_images/default_user.jpg' %>
+<% @posts.each do |post| %>
+    <div class="index">
+        <%= post.content %>
+    </div>
+<% end %> 

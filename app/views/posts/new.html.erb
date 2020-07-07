@@ -1,5 +1,10 @@
 <% provide(:title, '新規投稿') %>
 <%= form_tag("/posts/create") do %>
-    <textarea name="content"></textarea>
-    <input type="submit" value="送信する">
+  <form>  
+    <div class="form-group">
+        <label for="formGroupExampleInput2">新規投稿</label>
+        <input type="text" class="form-control"  placeholder="投稿内容を入力" name="content">
+    </div>
+    <button type="submit" class="btn btn-primary">送信する</button>
+  </form>
 <% end %>
