@@ -34,4 +34,25 @@ class UsersController < ApplicationController
         @posts = Post.where(user_id: params[:id])
         @user = User.find_by(id: params[:id])
     end    
+
+    def update
+        @user = User.find_by(id: params[:id])
+        if @user.id != session[:user_id]
+            redirect_to("/users/#{@user.id}/show")
+        end                                
+    end    
+
+    def edit
+        user = User.find_by(id: params[:id])
+        user.email = params[:mail]
+        user.user_name = params[:user_name]
+        user.password = params[:password]
+        if params[:image]
+            image = params[:image]
+            user.image_name = "#{user.id}.jpg"
+            File.binwrite("app/assets/images/#{user.image_name}", image.read)
+        end
+        user.save
+        redirect_to("/users/#{user.id}/show")                                   
+    end 
 end

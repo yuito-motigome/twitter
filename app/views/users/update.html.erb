@@ -1,0 +1,25 @@
+<% provide(:title, 'ユーザー編集') %>
+<%= form_tag("/users/#{@user.id}/edit",{multipart: true}) do %>
+    <div class="title">
+        ユーザー編集<br>
+    </div>
+  　<form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">ユーザーネーム</label>
+        <input type="text" class="form-control"  placeholder="ユーザーネームを入力" name="user_name">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">メールアドレス</label>
+        <input type="text" class="form-control"  placeholder="メールアドレスを入力" name="mail">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">パスワード</label>
+        <input type="password" class="form-control"  placeholder="パスワードを入力" name="password">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput">ユーザーネーム</label>
+        <input type="file" class="form-control"  placeholder="アイコンを選択" name="image">
+      </div>
+      <button type="submit" class="btn btn-primary">送信する</button>
+    </form>
+  <% end %>

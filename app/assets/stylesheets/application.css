@@ -272,10 +272,13 @@
     color: rgb(184, 171, 171);    
   }
   .right{
-    float:right
+    float:right;
   }
   .left{
-    float:left
+    float:left;
+  }
+  .midle{
+    text-align: center;
   }
   .index-at a{
     font-size: x-small;

@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   post "users/sign_in" => "users#sign_in"
   get "users/sign_out" => "users#sign_out"
   get "users/:id/show" => "users#show"
+  get "users/:id/update" => "users#update"
+  post "users/:id/edit" => "users#edit"
+  get "likes/:id/new" => "likes#new"
+  get "likes/:id/destroy" => "likes#destroy"
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

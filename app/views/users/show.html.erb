@@ -2,10 +2,14 @@
 <div class="title">
     <%= @user.user_name %>
 </div>
-<img src="/user_images/default_user.jpg"> 
-<%= image_tag '/user_images/default_user.jpg' %>
-<% @posts.each do |post| %>
-    <div class="index">
-        <%= post.content %>
-    </div>
-<% end %> 
+<div class="">   
+    <%= image_tag "#{@user.image_name}" %>
+</div>    
+    <% if @user.id == @now_user.id %>
+        <%= link_to "編集","/users/#{@user.id}/update", class: 'btn btn-primary' %>
+    <% end %>        
+    <% @posts.each do |post| %>
+        <div class="index">
+            <%= post.content %>
+        </div>
+    <% end %> 

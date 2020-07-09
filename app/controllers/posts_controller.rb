@@ -43,6 +43,10 @@ class PostsController < ApplicationController
     
     def erase
         @post = Post.find_by(id: params[:id])
+        if Like.find_by(post_id: @post.id) 
+            @like = Like.find_by(post_id: @post.id) 
+            @like.destroy
+        end    
         if @now_user.id == @post.user_id
             @post.destroy
         end
