@@ -288,3 +288,13 @@
     font-size: xx-large;
     text-align: center;
   }
+  .user_image img{
+    width: 50%;    
+    height: 40px;
+    margin: 0 auto;
+    border:solid 1px #57575f;
+    display: block;
+  }
+  .user_profile{
+
+  }
