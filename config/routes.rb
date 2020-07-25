@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :twitter
+  root 'home#top'
   get '/' =>"home#top"
   get "about" => "home#about"
   get "posts/index" => "posts#index"
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
   post "posts/create" => "posts#create"
   get "posts/:id/editer" => "posts#editer"
   post "posts/:id/edit" => "posts#edit"
+  get "posts/one" => "posts#one"
   get "posts/:id" => "posts#show"
   get "posts/:id/erase" => "posts#erase"
   get "users/create" => "users#create"
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   post "users/:id/edit" => "users#edit"
   get "likes/:id/new" => "likes#new"
   get "likes/:id/destroy" => "likes#destroy"
+  
 
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

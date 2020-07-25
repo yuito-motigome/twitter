@@ -52,4 +52,8 @@ class PostsController < ApplicationController
         end
         redirect_to("/posts/index")           
     end    
+
+    def one
+        
+    end    
 end
