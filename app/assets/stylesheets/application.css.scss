@@ -290,12 +290,18 @@
     text-align: center;
   }
   .user_image{
-    width:50%;
-    height: 50px;
+    width:500px;
+    height: 200px;
     border:1px solid black;
   }
   .user_profile{
     display: block;
     margin: 0 auto;
     text-align: center;
+  }
+/* スマホデザイン ================================ */
+  @media screen and ( max-width:479px )
+  {
+    
+  
   }
