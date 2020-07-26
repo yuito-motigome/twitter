@@ -1,10 +1,12 @@
 <% provide(:title, '編集') %>
-<%= form_tag("/posts/#{@post.id}/edit") do %>
-<form>  
-<div class="form-group">
-    <label for="formGroupExampleInput2">編集</label>
-    <input type="text" class="form-control"  placeholder="編集内容を入力" name="edit">
+<div class="header-main">
+    <%= form_tag("/posts/#{@post.id}/edit") do %>
+        <form>  
+            <div class="form-group">
+                <label for="formGroupExampleInput2">編集</label>
+                <input type="text" class="form-control"  placeholder="編集内容を入力" name="edit">
+            </div>
+            <button type="submit" class="btn btn-primary">送信する</button>
+        </form>
+    <% end %>
 </div>
-<button type="submit" class="btn btn-primary">送信する</button>
-</form>
-<% end %>

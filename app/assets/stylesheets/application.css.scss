@@ -61,7 +61,7 @@
   
   .main {
     position: absolute;
-    top: 64px;
+    top: 100px;
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -114,7 +114,6 @@
   }
   
   .header-menus a {
-    float: left;
     font-size: 13px;
     color: white;
   }
@@ -305,6 +304,18 @@
 /* スマホデザイン ================================ */
   @media screen and ( max-width:479px )
   {
-    
+    .main{
+      top:100px;
+    }
+    .header-menus a{
+      width: 20%;
+      text-align: center;
+      margin: 0 auto;
+      padding-left: 10px;
+      color: white;
+      font-size: 10px;
+      line-height: 50px;
+      box-sizing: border-box;
+    }
   
   }
